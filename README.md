@@ -15,7 +15,7 @@ docker build -t fastqpuri:bf88549 .
 ```
 
 ## Build Apptainer image
-Using the [definition file](Apptainer).
+Using the [definition file](Apptainer.bf88549).
 ```
 sudo -E apptainer build fastqpuri.sif Apptainer.bf88549
 ```
