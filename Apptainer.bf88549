@@ -1,0 +1,10 @@
+Bootstrap: docker-daemon
+From: fastqpuri:bf88549
+
+%runscript
+if [ -x /usr/local/bin/$SINGULARITY_NAME ]; then
+    exec $SINGULARITY_NAME "$@"
+else
+  /bin/echo -e "This Singularity image cannot provide a single entrypoint. Please use \"singularity exec $SINGULARITY_NAME <cmd>\", where <cmd> is one of the following:\n"
+  exec ls /usr/local/bin
+fi
