@@ -8,8 +8,8 @@ https://github.com/jengelmann/FastqPuri
 
 ## Build docker image
 ```
-curl -Lo jengelmann-fastqpuri-2023-10-23.zip https://github.com/jengelmann/FastqPuri/archive/bf88549580ead8e8b0e620331f840e9119586a77.zip
-unzip jengelmann-fastqpuri-2023-10-23.zip
+curl -Lo jengelmann-fastqpuri-bf88549.zip https://github.com/jengelmann/FastqPuri/archive/bf88549580ead8e8b0e620331f840e9119586a77.zip
+unzip jengelmann-fastqpuri-bf88549.zip
 cd FastqPuri-bf88549580ead8e8b0e620331f840e9119586a77
 docker build -t fastqpuri:bf88549 .
 ```
@@ -17,11 +17,11 @@ docker build -t fastqpuri:bf88549 .
 ## Build Apptainer image
 Using the [definition file](Apptainer.def).
 ```
-sudo -E apptainer build fastqpuri.aif Apptainer.def
+sudo -E apptainer build fastqpuri.sif Apptainer.bf88549
 ```
 
 ## make symlinks for executables
 ```
-apptainer exec fastqpuri.aif ls /usr/local/bin | xargs -L1 ln -s fastqpuri.aif
+apptainer exec fastqpuri.sif ls /usr/local/bin | xargs -L1 ln -s fastqpuri.sif
 ```
 
